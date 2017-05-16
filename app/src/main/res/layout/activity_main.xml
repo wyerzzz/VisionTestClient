@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.zzz.wyer.coolpc.wyerzzz_visiontest.MainActivity"
+    android:background="#d5d6d6"
+    android:padding="0dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Client Msg : "
+        android:id="@+id/tv_clientMsg"
+        android:layout_alignParentStart="true"
+        android:background="#70b3d9"
+        android:gravity="center_vertical"
+        android:textColor="#504d4d"
+        android:layout_alignParentTop="true"
+        android:textSize="18dp"
+        android:paddingLeft="10dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayout"
+        android:background="#70b3d9"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Start"
+            android:id="@+id/tv_start"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="#504d4d"
+            android:textSize="20dp"
+            android:enabled="true"
+            android:onClick="onClick"
+            android:background="@drawable/tv_bg" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Back to Log In"
+            android:id="@+id/tv_backLogin"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="#504d4d"
+            android:textSize="20dp"
+            android:enabled="true"
+            android:onClick="onClick"
+            android:background="@drawable/tv_bg" />
+    </LinearLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:rowCount="3"
+        android:columnCount="3"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv_clientMsg"
+        android:layout_above="@+id/linearLayout"
+        android:id="@+id/grid">
+
+        <ImageButton
+            android:id="@+id/ib_select"
+            android:src="@drawable/select"
+            android:onClick="onClick"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:adjustViewBounds="true"
+            android:layout_gravity="fill" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ib_left"
+            android:src="@drawable/arrow_left"
+            android:onClick="onClick"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:adjustViewBounds="false"
+            android:layout_gravity="fill" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ib_up"
+            android:src="@drawable/arrow_up"
+            android:onClick="onClick"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_below="@+id/tv_clientMsg"
+            android:layout_alignStart="@+id/ib_select"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:adjustViewBounds="true"
+            android:layout_gravity="fill" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ib_right"
+            android:src="@drawable/arrow_right"
+            android:onClick="onClick"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:layout_alignTop="@+id/ib_left"
+            android:layout_alignParentEnd="true"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:adjustViewBounds="false"
+            android:layout_gravity="fill" />
+
+        <ImageButton
+            android:id="@+id/ib_down"
+            android:src="@drawable/arrow_down"
+            android:onClick="onClick"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/linearLayout"
+            android:layout_alignStart="@+id/ib_select"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:adjustViewBounds="true"
+            android:layout_gravity="fill" />
+    </GridLayout>
+
+</RelativeLayout>
