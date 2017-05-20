@@ -22,7 +22,6 @@ import java.util.List;
  */
 public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.ViewHolder> {
     private ArrayList<RecordBean> list;
-    private int data_count = 1;
     private OnItemLongClickListener mOnItemLongClickListener;
 
     public void setOnItemLongClickListener(OnItemLongClickListener mOnItemLongClickListener) {
@@ -45,7 +44,8 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.ViewHolder
 //        Log.d("recordAdapter:",position+"");
         RecordBean bean = list.get(position);
 
-        holder.col_id.setText(data_count+"");
+        int data_num = list.indexOf(bean)+1;
+        holder.col_id.setText(data_num+"");
         holder.col_dateTime.setText(bean.getC_dateTime());
         holder.col_name.setText(bean.getC_name());
         holder.col_Leye.setText(bean.getC_l_vision());
@@ -56,7 +56,6 @@ public class RecordAdapter extends RecyclerView.Adapter<RecordAdapter.ViewHolder
 
         changeTextColor(fl,holder.col_Leye);
         changeTextColor(fr,holder.col_Reye);
-        data_count++;
 
         holder.itemView.setTag(position);
 
